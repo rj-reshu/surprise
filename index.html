@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HB Reshu❤️</title>
+    <style>
+        /* Background with Personalized Image */
+        body {
+            background: url('image/pic6.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: yellowgreen;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive Heading */
+        h1 {
+            font-size: 5vw;
+            margin-top: 5vh;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px white; }
+            to { text-shadow: 0 0 20px gold; }
+        }
+
+        /* Letter Box (Responsive) */
+        .letter-box {
+            background: aliceblue;
+            padding: 20px;
+            width: 90%;
+            max-width: 350px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px whitesmoke;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .letter-box:hover {
+            transform: scale(1.1);
+        }
+
+        .letter-box h2 {
+            font-size: 1.5em;
+        }
+
+        /* Hidden Message (Responsive) */
+        .hidden-message {
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+            width: 90%;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Floating Balloons */
+        .balloon {
+            position: absolute;
+            font-size: 2em;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            color: yellow;
+            font-size: 1.5em;
+            animation: sparkle 2s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+            100% { opacity: 0; transform: scale(1); }
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            h1 { font-size: 6vw; }
+            .letter-box { width: 90%; padding: 15px; }
+            .hidden-message { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎂 Happy Birthday, My Love Reshu! 🎂</h1>
+    
+    <p>Click the letter below to reveal a special message for you! 💌</p>
+
+    <div class="letter-box" onclick="revealMessage()">
+        <h2>📩 Open Mystery Letter</h2>
+    </div>
+
+    <div id="message" class="hidden-message">
+        <h2>💖 My Dearest mum 💖</h2>
+        <p>
+            Every moment with you is a blessing.  
+            Your smile is my sunshine, and your love is my strength.  
+            On this special day, I want you to know that  
+            **You are my everything, my love, my life, my forever!** ❤️  
+        </p>
+        <p>
+            Happy Birthday, my beautiful queen! 🎉🎁  
+            May this year bring you endless joy and love!  
+        </p>
+    </div>
+
+    <!-- Custom Birthday Song -->
+    <audio id="song" src="image/happy birthday.mp3" preload="auto"></audio>
+
+    <script>
+        function revealMessage() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("song").play();
+        }
+
+        function createBalloons() {
+            setInterval(() => {
+                let balloon = document.createElement("div");
+                balloon.innerHTML = "🎈";
+                balloon.className = "balloon";
+                balloon.style.left = Math.random() * 100 + "vw";
+                balloon.style.animationDuration = Math.random() * 3 + 3 + "s";
+                document.body.appendChild(balloon);
+                setTimeout(() => balloon.remove(), 5000);
+            }, 300);
+        }
+
+        function createSparkles() {
+            setInterval(() => {
+                let sparkle = document.createElement("div");
+                sparkle.innerHTML = "✨";
+                sparkle.className = "sparkle";
+                sparkle.style.left = Math.random() * 100 + "vw";
+                sparkle.style.top = Math.random() * 100 + "vh";
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }, 500);
+        }
+
+        createBalloons();
+        createSparkles();
+    </script>
+
+</body>
+</html>
